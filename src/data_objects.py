@@ -4,11 +4,12 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.orm import scoped_session, sessionmaker
 import time
+from config import dburl
 
-db = create_engine('sqlite:///db/sqlite/test.db', echo=False)
+db = create_engine(dburl, echo=False)
 Session = sessionmaker(bind=db)
 Base = declarative_base()
-  
+
 
 try:
   session
